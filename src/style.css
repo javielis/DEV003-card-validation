@@ -1,0 +1,50 @@
+#html , body {
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background-image:url("../descarga.jpg") ;
+   
+}
+
+    
+
+#Titulo{
+    background-color: rgb(159, 197, 127);
+    text-align: center;
+    border-radius: 10px;
+    color: #f5f4f4;
+    background-color: #f0e8ec;
+    width: 1800px;
+}
+#Inicio{
+    background-image: linear-gradient(to top, #30cfd0 0%, #c2b8cf 50%);
+    padding-left: 500px;
+    width: 1800px;
+}
+#Parte1{
+   background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 50%);
+   padding-left: 0px;
+   width: 1800px;
+   
+}
+.Comprador{
+    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 50%);
+    padding-left: 500px;
+    width: 1800px;
+}
+
+#Parte2{
+    background-image: linear-gradient(to top, #5ee7df 0%, #b490ca 50%);
+    padding-left: 500px;
+    width: 1800px;
+}
+
+.Datostarjeta {
+
+    text-align: center 50px;
+    color: #050000;
+    padding-left: 500px;
+    width: 1800px;
+   
+}
+
