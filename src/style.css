@@ -18,12 +18,12 @@
 }
 #Inicio{
     background-image: linear-gradient(to top, #30cfd0 0%, #c2b8cf 50%);
-    padding-left: 500px;
+    padding-left: 500px; 
     width: 1800px;
 }
 #Parte1{
    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 50%);
-   padding-left: 0px;
+   padding-left: 500px;
    width: 1800px;
    
 }

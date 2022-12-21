@@ -1,39 +1,44 @@
 
 import validator from './validator.js';
 
+
+
+
 console.log(validator);
 
 
-// colocamos el inicio hacer que lea el nombre de la empresa y presione el boton inicio.
-// pantalla 1
 
-function Inicio(){
-    document.getElementById("Inicio").style.display= "block";
-    document.getElementById("Parte1").style.display= "none";
-    document.getElementById("Parte2").style.display= "none";
-}  
+// pantalla 1
+// para que se muestre mi primera pantalla y las demas se oculten
+ function Inicio(){
+   document.getElementById("Inicio").style.display= "block";
+   document.getElementById("Parte1").style.display= "none";
+  document.getElementById("Parte2").style.display= "none";
+  console.log("Inicio");
+} 
 Inicio()
   
-  let bienvenidosBoton= document.getElementById("BotonInicio")
-  // console.log("hola")
-//  console.log(bienvenidosBoton)
+ let bienvenidosBoton= document.getElementById("botonInicio");
 
+// console.log(bienvenidosBoton)
+// // con estoy le doy evento que quiero a mi boton 
 
-   bienvenidosBoton.addEventListener("click",(Inicio),console.log("diste click"))
-   bienvenidosBoton.addEventListener("click",(Parte1)),console.log ("comienza la bienvenida")
+  bienvenidosBoton.addEventListener("click",Inicio);
+  bienvenidosBoton.addEventListener("click",Parte1);
 
-  // pantalla 2
-  function Parte1(){
+    // pantalla 2
+   function Parte1(){
 
-  document.getElementById("Inicio").style.display= "none";
-  document.getElementById("Parte1").style.display= "block";
-  document.getElementById("Parte2").style.display= "none";
-}  
+   document.getElementById("Inicio").style.display= "none";
+   document.getElementById("Parte1").style.display= "block";
+   document.getElementById("Parte2").style.display= "none";
+   console.log(Parte1);
+ }  
 
-  let continuarBoton=document.getElementById("BotonSeccion1");
+   let continuarBoton=document.getElementById("botonSeccion1");
 
-  continuarBoton.addEventListener("click",(Parte1),console.log("primera parte"))
-  continuarBoton.addEventListener("click",(Parte2)),console.log("comenzara la siguiente parte")
+   continuarBoton.addEventListener("click",Parte1);    
+   continuarBoton.addEventListener("click",Parte2);
 
  
 //   para que acepte solo letras
@@ -41,16 +46,97 @@ Inicio()
   // pantalla 3 para datos de tarjeta
   function Parte2(){
     
+  
   document.getElementById("Inicio").style.display= "none";
   document.getElementById("Parte1").style.display= "none";
   document.getElementById("Parte2").style.display= "block";
- }
- 
+  console.log("Parte2");
+  const numtar = document.getElementById("numeroTarjeta").value;
+  const botonfin = document.getElementById("BotonSeccion2");
 
-  let finalizarBoton=document.getElementById("BotonSeccion2");
+
   
-  finalizarBoton.addEventListener("click",(Parte2),console.log("segunda parte"))
+  // const numerotarjeta = (prompt("Ingresa el número de tarjeta"));
+  // console.log(numerotarjeta);
+  botonfin.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(document.getElementById("numeroTarjeta").value);
+    
+
+
+    
+    // const reverser= ccNumber.split("");
+    // console.log((arrayTarjeta).value);
+    // const reversernumerotarjeta = arrayTarjeta.reverse();
+    // console.log(reversernumerotarjeta);
+   
+}
+ 
+   )
+  }
+
+  
+// esta seria una siguien funcion que quiero darle a mi boton
+  // let finalizarBoton=document.getElementById("botonSeccion2");
+
+   
+//   // const botonfin = document.getElementById("BotonSeccion2");
+//  botonfin.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   console.log(numtar);
+//  })
+ // finalizarBoton.addEventListener("click",Parte2);
+
+    // finalizarBoton.addEventListener("click",Parte2);
+    //  finalizarBoton.addEventListener("click",numerotarjeta);
+
+   
+
+
+  //  console.log("aqui debera de comenzar la validacion no el inicio"))
+
+  // e.preventDelfault();
+  // tarjeta()
+  /* function (){
+    let numerotarjeta=document.getElementById("numerotarjeta").value;
+    console.log(numerotarjeta)
+  }
+*/
+
+     //  aqui tomaremos el numero de tarjeta del imput para convertirlo 
+     // let arrayNumerotarjeta=Numerotarjeta.split('');
+    // console.log(arrayNumerotarjeta);  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  
+  function Parte3(){
+
+
+
+  document.getElementById("Inicio").style.display= "none";
+  document.getElementById("Parte1").style.display= "none";
+  document.getElementById("Parte2").style.display= "none";
+  document.getElementById("Parte3").style.display= "block";
+}
+  let graciasBoton =document.getElementById("BotonSeccion2");
+  
+  graciasBoton.addEventListener("click",(Parte3),console.log("tercera parte"))
   finalizarBoton.addEventListener("click",(Inicio),console.log("aqui debera de comenzar la validacion no el inicio"))
+
+*/
+
 
   // numeroTarjeta.preventDefault();
 
