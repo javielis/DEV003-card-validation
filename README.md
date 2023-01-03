@@ -14,122 +14,22 @@
 
 ***
 
-## 1. Preámbulo
+## 1. INTRODUCCION
 
-El [algoritmo de Luhn](https://es.wikipedia.org/wiki/Algoritmo_de_Luhn),
-también llamado algoritmo de módulo 10, es un método de suma de verificación,
-se utiliza para validar números de identificación; tales como el IMEI de los
-celulares, tarjetas de crédito, etc.
-
-Este algoritmo es simple. Obtenemos la reversa del número a verificar (que
-solamente contiene dígitos [0-9]); a todos los números que ocupan una posición
-par se les debe multiplicar por dos, si este número es mayor o igual a 10,
-debemos sumar los dígitos del resultado; el número a verificar será válido si
-la suma de sus dígitos finales es un múltiplo de 10.
+En este primer proyecto se contruyo una aplicacion web que le permitira al usuario ingresar un numero de tarjeta para que este pueda ser validado.
 
 ![gráfica de algoritmo de Luhn](https://www.101computing.net/wp/wp-content/uploads/Luhn-Algorithm.png)
 
-## 2. Resumen del proyecto
+## 2. NUESTROS USUARIOS
+ Esta pagina fue creada para quienes entre a una tienda y realiza una compra , o servicio en @javibeauty la utilizaria para poder cancelar.
 
-En este proyecto tendrás que construir una aplicación web que le permita a un
-usuario validar el número de una tarjeta de crédito. Además, tendrás que
-implementar funcionalidad para ocultar todos los dígitos de una tarjeta menos
-los últimos cuatro.
 
-La temática es libre. Tú debes pensar en qué situaciones de la vida real se
-necesitaría validar una tarjeta de crédito y pensar en cómo debe ser esa
-experiencia de uso (qué pantallas, explicaciones, mensajes, colores, ¿marca?)
-etc.
+## 3.MODO DE  USO DE LA APLICACION 
 
-Como continuación del proyecto de preadmisión, volverás a trabajar sobre
-fundamentos de JavaScript, incluyendo conceptos como variables, condicionales,
-y funciones, así como eventos y manipulación básica del DOM, fundamentos de
-HTML y CSS. Mientras desarrollas este proyecto, te familiarizarás con nuevos
-conceptos también.
+Nuestro objetivo primordiar es que la tarjeta pueda ser validada para mayor seguridad de los usuarios. lo cualq ingresarian a nuestra pagina web donde pueden conseguir 3 pantallas, la primera seria de bienvenidad y nombre,la del  registro del comprador y la tercera es para ingresar los datos del usuario de la tarjeta o dueño de la tarjeta. para que este pueda ser validado.
 
-### Los objetivos generales de este proyecto son los siguientes
+Si la tarjeta es valida le saldra un alet indicando q es validad y si no igualmente le saldra otra alert que no es validad.
 
-* Trabajar en base a un boilerplate, la estructura básica de un proyecto en
-  distintas carpetas (a través modulos en JS).
-* Conocer las herramientas de mantenimiento y mejora del código (linters y
-  pruebas unitarias).
-* Aprender sobre objetos, estructuras, métodos e iteración (bucles)
-  en JavaScript
-* Implementar control de versiones con git (y la plataforma github)
-
-## 3. Consideraciones generales
-
-* Este proyecto lo resolvemos de manera individual. Te recomendamos una
-  duracion de 1-3 sprints.
-* Enfócate en aprender y no solamente en "completar" el proyecto.
-* Te sugerimos que no intentes saberlo todo antes de empezar a codear.
-  No te preocupes demasiado ahora por lo que _todavía_ no entiendas.
-  Irás aprendiendo.
-
-## 4. Hito: Criterios de aceptación mínimos del proyecto
-
-Estos son los requisitos que tu proyecto debe que cumplir para asegurar que tu
-trabajo cubra los objetivos principales.
-
-**1. Una interfaz que debe permitir a la usuaria:**
-
-* Insertar un numero (texto) que quieres validar. Usa solo caracteres numéricos
-  (dígitos) en la tarjeta a validar [0-9].  
-* Ver si el resultado es válido o no.  
-* Ocultar todos los dígitos del número de tarjeta a exepción de los últimos
-  4 caracteres.  
-* No debes poder ingresar un campo vacío.  
-
-**2. Pruebas unitarias de los métodos.**  
-Los metódos de `validator` (`isValid` y `maskify`) deben tener cobertura con
-pruebas unitarias.
-
-**3. Código de tu proyecto subido a tu repo e interfaz "desplegada".**  
-El código final debe estar subido en un repositorio en GitHub. La interfaz o
-pagina web, debe ser "desplegada" (accesible públicamente online) usando
-GitHub Pages.
-  
-**4. Un README que contiene una definición del producto.**  
-En el README cuéntanos cómo pensaste en los usuarios y cuál fue tu proceso
-para definir el producto final a nivel de experiencia y de interfaz.  
-Estas preguntas sirven como guía:
-
-* Quiénes son los principales usuarios de producto.
-* Cuáles son los objetivos de estos usuarios en relación con tu producto.
-* Cómo crees que el producto que estás creando está resolviendo sus problemas.
-
-Con estos requisitos cumplidos puedes
-[considerar agendar un Project Feedback con unx coach.](#9-para-considerar-project-feedback)
-
-## 5. Hito Opcional: Mostrar la franquicia de tarjeta
-
-Las partes opcionales tienen como intención permitirte profundizar un poco más
-sobre los objetivos de aprendizaje del proyecto. Todo en la vida tiene pros y
-contras, decide sabiamente si quieres invertir el tiempo en profundizar/
-perfeccionar o aprender cosas nuevas en el siguiente proyecto.
-
-En hito 2 puedes además de validar si el número de la
-tarjeta es válida, mostrar la [franquicia](https://es.wikipedia.org/wiki/N%C3%BAmero_de_tarjeta_bancaria)
-de la tarjeta (ej: Visa, MasterCard, etc)
-usando estas [reglas de validación](https://stevemorse.org/ssn/cc.html).
-Si escribes un nuevo método para eso, hay que hacer pruebas unitarias.
-
-## 6. Consideraciones técnicas
-
-La lógica del proyecto debe estar implementada completamente en JavaScript. En
-este proyecto NO está permitido usar librerías o frameworks, solo JavaScript
-puro también conocido como Vanilla JavaScript.
-
-Para comenzar este proyecto tendrás que hacer un _fork_ y _clonar_ este
-repositorio que contiene un _boilerplate_ con tests (pruebas). Un _boilerplate_
-es la estructura basica de un proyecto que sirve como un punto de partida con
-archivos inicial y configuración basica de dependencias y tests.
-
-Los tests unitarios deben cubrir un mínimo del 70% de _statements_, _functions_
-y _lines_, y un mínimo del 50% de _branches_. El _boilerplate_ ya contiene el
-setup y configuración necesaria para ejecutar los tests (pruebas) así como _code
-coverage_ para ver el nivel de cobertura de los tests usando el comando `npm
-test`.
 
 El boilerplate que les damos contiene esta estructura:
 

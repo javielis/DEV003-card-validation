@@ -1,50 +1,49 @@
 
-import validator from './validator.js';
+//import validator from './validator.js';
 
-
-
-
-console.log(validator);
+//console.log(validator);
 
 
 
 // pantalla 1
 // para que se muestre mi primera pantalla y las demas se oculten
- function Inicio(){
-   document.getElementById("Inicio").style.display= "block";
-   document.getElementById("Parte1").style.display= "none";
+
+function Inicio(){
+  document.getElementById("Inicio").style.display= "block";
+  document.getElementById("Parte1").style.display= "none";
   document.getElementById("Parte2").style.display= "none";
   console.log("Inicio");
 } 
 Inicio()
   
- let bienvenidosBoton= document.getElementById("botonInicio");
+let bienvenidosBoton= document.getElementById("botonInicio");
 
 // console.log(bienvenidosBoton)
 // // con estoy le doy evento que quiero a mi boton 
 
-  bienvenidosBoton.addEventListener("click",Inicio);
-  bienvenidosBoton.addEventListener("click",Parte1);
+bienvenidosBoton.addEventListener("click",Inicio);
+bienvenidosBoton.addEventListener("click",Parte1);
 
-    // pantalla 2
-   function Parte1(){
+// pantalla 2
+function Parte1(){
 
-   document.getElementById("Inicio").style.display= "none";
-   document.getElementById("Parte1").style.display= "block";
-   document.getElementById("Parte2").style.display= "none";
-   console.log(Parte1);
- }  
+  document.getElementById("Inicio").style.display= "none";
+  document.getElementById("Parte1").style.display= "block";
+  document.getElementById("Parte2").style.display= "none";
+  console.log (Parte1);
+}  
 
-   let continuarBoton=document.getElementById("botonSeccion1");
+const continuarBoton=document.getElementById("botonSeccion1");
 
-   continuarBoton.addEventListener("click",Parte1);    
-   continuarBoton.addEventListener("click",Parte2);
+continuarBoton.addEventListener("click",Parte1);    
+continuarBoton.addEventListener("click",Parte2);
 
  
 //   para que acepte solo letras
  
-  // pantalla 3 para datos de tarjeta
-  function Parte2(){
+// pantalla 3 para datos de tarjeta
+  
+function Parte2(){
     
   
   document.getElementById("Inicio").style.display= "none";
@@ -55,72 +54,124 @@ Inicio()
   const botonfin = document.getElementById("BotonSeccion2");
 
 
-  
+           
   // const numerotarjeta = (prompt("Ingresa el número de tarjeta"));
   // console.log(numerotarjeta);
-  botonfin.addEventListener("click", (e) => {
-    e.preventDefault();
-    console.log(document.getElementById("numeroTarjeta").value);
-    
+  botonfin.addEventListener("click", (e) => {//aqui le estamos dando un evento a mi boton
+    e.preventDefault();// para q mi pagina no se recargue nuevamente 
+    console.log(document.getElementById("numeroTarjeta").value);// para que comience a mostrarse en la consola 
 
+    //  primero tebgo que jalar el valor de mi tarjeta de mi html a index.js.
+    const valortarje = document.getElementById("numeroTarjeta").value;
+    //tengo que aplicarle la funcion a mi valor de tarjeta.
+    function isValid(tarje){
+      const tarjeta = Array.from(tarje);// convertido en array
+      const revers = (tarjeta.reverse());// aqui lo que queremos es que nuestro Array se voltee
+      console.log(revers);
+      // multiplicar por 2 los numeros en posiciones pares.
+      const reverPar = [];
+      for(let i=0; i<revers.length; i++){
+        if(i%2!==0){
+          let pares = (revers[i]*2); //Los elementos de mi array revers 
+          if(pares>9){// si mi multiplicacion de impares da mayor a 9  
+            pares = (pares-9);
+            reverPar.push(pares)
 
-    
-    // const reverser= ccNumber.split("");
-    // console.log((arrayTarjeta).value);
-    // const reversernumerotarjeta = arrayTarjeta.reverse();
-    // console.log(reversernumerotarjeta);
-   
-}
+          }else{
+            reverPar.push(pares)// para guardar mis array
+          }
+        }
+      }
+      console.log(reverPar);
+      const reverImpar = [];
+      for (let i=0; i<revers.length;i++){
+        if(i%2===0){
+          const impares = (revers[i]*1);
+          reverImpar.push(impares)
+        }
+      }
+      console.log(reverImpar);
+      const sumaTo =  reverPar.concat(reverImpar);//aqui ya lo junte o agrupe todos uno al lado de otro 
+      console.log(sumaTo)
+      let sumaFinal = 0;
+      for(const n of sumaTo){
+        sumaFinal +=n;
+      }
+      console.log(sumaFinal);
  
-   )
+      if (tarje.length >= 13 &&tarje.length <= 16 && sumaFinal%10===0){
+        return true
+      }else{
+        return false   
+      }
+     
+      
+    }
+    const resultado = isValid(valortarje);
+    console.log(resultado);
+    if (resultado === true){
+      alert("Su tarjeta es válida")
+    }else{ 
+      alert("Su tarjeta no es válida")
+    }
+    
   }
+
+  )
+  
+
+}
+
+
+      
+
+ 
+
+    //     const numeroTarjeta = document.getElementById("numeroTarjeta").value; // aqui comenzamos el llamado de validator a index, 
+    //     const resultado = validator.maskify(numeroTarjeta);//creamo una constante q se llama resultado q mostrara y aplicara el maskify q esta dentro de validecto. que viene siento mi objeto
+    //     console.log(resultado)
+    //     const reversa = validator.isValid(numeroTarjeta);// aplicamos lareversa del mismo modo se llamaria, y se crea una constante llamada reversa.
+    //     console.log(reversa)
+     
+  
+  
+
+
+
+
+
+
+// tengo que ver el resultado en la consola.
+//  tebgo que estructurar mi funcion.
+// para poder ver en la consola que esta funcionando
+//  return "tarjeta " + (tarje)
+      
+// que todos los numeros que se encuentren en posicion pares multiplicarlo por 1 , 2, 3 ,4 
+// si estos numero son mayor o igual a 10 debemos sumar los digitosdel resultado
+// para que sea el numero valido la suma de sus digitos finales tiene que ser multiplo de 10.
+      
+    
+    
+    
 
   
-// esta seria una siguien funcion que quiero darle a mi boton
-  // let finalizarBoton=document.getElementById("botonSeccion2");
+//     console.log(isValid(11111));
 
-   
-//   // const botonfin = document.getElementById("BotonSeccion2");
-//  botonfin.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   console.log(numtar);
-//  })
- // finalizarBoton.addEventListener("click",Parte2);
+//   // function saludo(nombre){
+//   //   return "hola " + nombre
+//   // }
 
-    // finalizarBoton.addEventListener("click",Parte2);
-    //  finalizarBoton.addEventListener("click",numerotarjeta);
+  
 
-   
-
-
-  //  console.log("aqui debera de comenzar la validacion no el inicio"))
-
-  // e.preventDelfault();
-  // tarjeta()
-  /* function (){
-    let numerotarjeta=document.getElementById("numerotarjeta").value;
-    console.log(numerotarjeta)
-  }
-*/
-
-     //  aqui tomaremos el numero de tarjeta del imput para convertirlo 
-     // let arrayNumerotarjeta=Numerotarjeta.split('');
-    // console.log(arrayNumerotarjeta);  
+// const resultado = saludo("Javielis");
+// console.log(resultado); 
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-  /*  
+/*  
   function Parte3(){
 
 
@@ -138,94 +189,15 @@ Inicio()
 */
 
 
-  // numeroTarjeta.preventDefault();
+// numeroTarjeta.preventDefault();
 
 
 
-  // let   titular=document.getElementById("BotonSeccion2")
-  // let expiracion=document.getElementById("BotonSeccion2")
-  // let cvv=document.getElementById("BotonSeccion2")
+// let   titular=document.getElementById("BotonSeccion2")
+// let expiracion=document.getElementById("BotonSeccion2")
+// let cvv=document.getElementById("BotonSeccion2")
       
 
  
  
   
-
-
-
-
-
-
-
-
-
-/*
-    Inicio.addEventListener("click", Bienvenidos);
-
-    // Segunda da pantalla Aqui deberia salir una segunda pantalla pidiendo el nombre y apellido de quien cobra 
-      
-function Parte1(){
-      document.getElementById("Inicio").style.display= "none";
-      document.getElementById("Parte1").style.display= "block";
-      document.getElementById("Parte2").style.display= "none";
-    }     
-      Parte1()
-let Continuar= document.getElementById("BotonSeccion1")
-     Parte1.addEventListener("click", Continuar);
-
-
-function Parte2(){
-    document.getElementById("Inicio").style.display= "none";
-    document.getElementById("Parte1").style.display= "none";
-    document.getElementById("Parte2").style.display= "block";
-} 
-    Parte2()
-let Iniciar= document.getElementById("BotoSeccion2")
-Parte1.addEventListener("click", Iniciar);   
-
-    //  debo colocar aqui la funcion de 
-    //  function Sololetras(e)
-//    {key=e.keyCode || e.which;
-    // tecla= String.fromCharCode(key).toString();
-    // letras = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
-    //  if(letras.indexOf(tecla) == -1 && !tecla_especial) ;
-// { 
-    // alert("Ingrese solo letras");
-    // return false;
-// }
-   
-   function Parte2(){
-    document.getElementById("Inicio").style.display= "none";
-    document.getElementById("Parte1").style.display= "none";
-    document.getElementById("Parte2").style.display= "block";
-   
-let Parte2= document.getElementById("Parte2");
-   Parte2.addEventListener("click", Iniciar);
-   
-  
-   }
-//   para que acepte solo letras
-   function Parte1(e)
-{
-
- key = e.keyCode|| e.which;
- teclado = String.fromCharCorde(Key).toString();
- letras =" abcdefghijklmnñopqrstuvwxyz";
- especiales ="164";
- teclado_especial = false;
-
- for(var i in especiales){
-   inf(key==especiales)[i]{
-     teclado_especial=true;break;
-
-   }
- }
- if(letras.indexOf(teclado)== -1 && !teclado_especial){
-   return false;
- }
-<label type="text"nombre="letras" onkeypress="return Parte1(event)"/>
-}
-
-
-
-*/
