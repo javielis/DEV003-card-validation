@@ -64,6 +64,8 @@ function Parte2(){
     //  primero tebgo que jalar el valor de mi tarjeta de mi html a index.js.
     const valortarje = document.getElementById("numeroTarjeta").value;
     //tengo que aplicarle la funcion a mi valor de tarjeta.
+
+    
     function isValid(tarje){
       const tarjeta = Array.from(tarje);// convertido en array
       const revers = (tarjeta.reverse());// aqui lo que queremos es que nuestro Array se voltee
@@ -110,14 +112,14 @@ function Parte2(){
     const resultado = isValid(valortarje);
     console.log(resultado);
     if (resultado === true){
-      alert("Su tarjeta es válida")
+      alert("Se realizo el pago con exito")
     }else{ 
-      alert("Su tarjeta no es válida")
+      alert("Su tarjeta no es válida por favor vuelva a intentarlo")
     }
     
   }
   )
-  
+ 
 
 }
 
