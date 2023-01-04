@@ -27,7 +27,7 @@ Cada una de las pantallas estan formadas de la siguiente manera de forma mas det
 Con esto lograremos que los datos del usuario que quiere adquirir algun servicio o compra quede registrado, para futuros procesos.
  logre organizarme manejando trello y parte manual en libretas fichas entre otros. 
  aqui dejo parte de mi trello. 
- [Organizacion](trello.jpeg)
+ ![Organizacion](trello.jpeg)
 
  Con este proyecto podemos resolver problemas como las falsas tarjetas al momento de cancelar, ayudamos a una tienda a poder llevar un registro del usuario, aun le falta algunos procesos pero la encaminacion y mi idea de proyecto con lo que esta planteado se puede dar seguridad a ambos usuario tanto al vendedor como comprador de la validacion de una tarjeta  y la captura de datos. 
  
