@@ -20,9 +20,9 @@ Si la tarjeta es valida le saldra un alert indicando q es validad y si no igualm
 
 Cada una de las pantallas estan formadas de la siguiente manera de forma mas detallada:
 
-[Nombre de quien ingresa a la pagina](parte1.jpeg)
-[Datos del comprador](Parte2.jpeg)
-[Datos que se encuentra registrado en la tarjeta que se validara](Parte3.jpeg)
+![Nombre de quien ingresa a la pagina](parte1.jpeg)
+![Datos del comprador](Parte2.jpeg)
+![Datos que se encuentra registrado en la tarjeta que se validara](Parte3.jpeg)
 
 Con esto lograremos que los datos del usuario que quiere adquirir algun servicio o compra quede registrado, para futuros procesos.
  logre organizarme manejando trello y parte manual en libretas fichas entre otros. 
