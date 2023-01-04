@@ -16,8 +16,8 @@ function Inicio(){
 } 
 Inicio()
   
-let bienvenidosBoton= document.getElementById("botonInicio");
-
+const bienvenidosBoton= document.getElementById("botonInicio");
+ 
 // console.log(bienvenidosBoton)
 // // con estoy le doy evento que quiero a mi boton 
 
@@ -50,7 +50,7 @@ function Parte2(){
   document.getElementById("Parte1").style.display= "none";
   document.getElementById("Parte2").style.display= "block";
   console.log("Parte2");
-  const numtar = document.getElementById("numeroTarjeta").value;
+  // const numtar = document.getElementById("numeroTarjeta").value;
   const botonfin = document.getElementById("BotonSeccion2");
 
 
@@ -116,7 +116,6 @@ function Parte2(){
     }
     
   }
-
   )
   
 
@@ -127,11 +126,11 @@ function Parte2(){
 
  
 
-    //     const numeroTarjeta = document.getElementById("numeroTarjeta").value; // aqui comenzamos el llamado de validator a index, 
-    //     const resultado = validator.maskify(numeroTarjeta);//creamo una constante q se llama resultado q mostrara y aplicara el maskify q esta dentro de validecto. que viene siento mi objeto
-    //     console.log(resultado)
-    //     const reversa = validator.isValid(numeroTarjeta);// aplicamos lareversa del mismo modo se llamaria, y se crea una constante llamada reversa.
-    //     console.log(reversa)
+//     const numeroTarjeta = document.getElementById("numeroTarjeta").value; // aqui comenzamos el llamado de validator a index, 
+//     const resultado = validator.maskify(numeroTarjeta);//creamo una constante q se llama resultado q mostrara y aplicara el maskify q esta dentro de validecto. que viene siento mi objeto
+//     console.log(resultado)
+//     const reversa = validator.isValid(numeroTarjeta);// aplicamos lareversa del mismo modo se llamaria, y se crea una constante llamada reversa.
+//     console.log(reversa)
      
   
   
